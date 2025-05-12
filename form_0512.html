@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color:#b1abab;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin:0;
+      height: 80vh;
+    }
+    .con {
+      display: flex; 
+      flex-direction: row; 
+      justify-content: center;
+      align-items: center;    
+      gap: 16px; 
+    }
+    
+    h2{
+      text-align: center;
+    }
+    div{
+      width: 300px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      margin: 0 auto;
+      border-radius: 8px;
+      background-color: #ffffff
+      ;
+
+    }
+    input{
+      padding: 10px 20px;
+      margin: 4px;
+      width: 250px;
+    }
+    
+    label{
+      font-weight: bold;
+      font-size:large;
+    }
+    select{
+
+      width: 290px;
+      padding: 10px 20px;
+      margin: 4px;
+    }
+    button{
+      width: 300px;
+      padding: 10px 20px;
+      margin: 4px;
+      background-color: #36e25f;
+      border:none;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h2>구글 폼 클론 - 사용자 설문지</h2>
+  <div class="con">
+    <form>
+      <label for="name">이름 : </label><br />
+      <input type="text" id="name" name="name" placeholder="이름을 입력하세요" ><br />
+      <br />
+      <label for="email">이메일 : </label><br />
+      <input type="text" id="email" name="email" placeholder="example@gmail.com" ><br />
+      <br />
+      <label for="tel">전화번호 : </label><br />
+      <input type="text" id="tel" name="tel" placeholder="010-1234-5678" ><br />
+      <br />
+      <label for="sex">성별</label><br />
+      <select name="sex" id="sex" name="tel">
+        <option value="">성별</option>
+        <option value="man"> 남자 </option>
+        <option value="girl"> 여자 </option>
+      </select><br />
+      <br />
+      <label for="agree">이용 약관에 동의 :</label><br />
+      <input type="checkbox" id="agree" name="agree" required><br />
+      <br />
+      <button onclick="formsend()">제출하기</button> <br />   
+      <br />
+      <button>추가 질문 추가</button> <br />   
+    </form>
+  </div>
+
+  <script>
+    document.querySelector("form").addEventListener("submit",function(event){
+      event.preventDefault()
+      const name= document.getElementById("name").value;
+      if(!name)
+      {
+        alert("이름이 입력되지 않았습니다.");
+        return
+      }
+      else if (!email)
+      {
+        alert("이메일이 입력되지 않았습니다.");
+      }
+      else if (!tel)
+      {
+        alert("전화번호가 입력되지 않았습니다.");
+      }
+        else if (!sex)
+        alert("성별이 선택되지 않았습니다.") 
+      else if (!agree_value){
+        alert("약관 동의가 입력되지 않았습니다.");
+      }
+      else
+      {
+        alert('설문지 제출완료! 이름 : '+name+' \n 이메일 : '+ email+ ' \n 전화번호 : '+tel)
+      }
+
+      console.log("!")
+    })
+
+    
+      
+
+      /*
+    function formsend()
+    {  
+      const name= document.getElementById("name").value;
+      const email=document.getElementById("email").value;
+      const tel=document.getElementById("tel").value;
+      const sex=document.getElementById("sex").value;
+      const agree=document.getElementById("agree");
+      let agree_value=null;
+      if(agree.checked==true)
+      {
+        agree_value='Y';
+      }
+      
+     
+      if(!name)
+        alert("이름이 입력되지 않았습니다.");
+      else if (!email)
+        alert("이메일이 입력되지 않았습니다.");
+      else if (!tel)
+        alert("전화번호가 입력되지 않았습니다.");
+      else if (!sex)
+        alert("성별이 선택되지 않았습니다.") 
+      else if (!agree_value){
+        alert("약관 동의가 입력되지 않았습니다.");
+      }
+      else
+      {
+        alert('설문지 제출완료! 이름 : '+name+' \n 이메일 : '+ email+ ' \n 전화번호 : '+tel)
+      } */
+      
+    }
+  </script>
+</body>
+</html>
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <title>POST 방식 - 구글 폼 예제</title>
+</head>
+<body>
+  <h2>POST 방식 - 사용자 정보 제출</h2>
+  <form action="https://httpbin.org/post" method="POST">
+    <label for="username">사용자 이름:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="email">이메일:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <button type="submit">제출하기</button>
+  </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GET 방식 - 구글 폼 예제</title>
+</head>
+<body>
+  <h2>GET 방식 - 검색 폼 예제</h2>
+  <form action="https://www.google.com/search" method="GET">
+    <label for="query">검색어:</label>
+    <input type="text" id="query" name="q" placeholder="검색어를 입력하세요">
+    <button type="submit">검색하기</button>
+  </form>
+</body>
+</html>
+ -->
