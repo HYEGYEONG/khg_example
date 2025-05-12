@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 페이지 실습</title>
+  <style>
+    
+    #main{
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      text-align: center;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+    button{
+      background-color: #ab6fcc;
+      color:#ffffff;
+      padding: 10px 20px;
+      margin: 4px;
+    }
+    .btn:hover
+    {
+      background-color: #9910e2;
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="main">
+    <h1>나의 첫 웹 페이지</h1>
+    <p id="title">버튼을 클릭해보세요!</p>
+    <button class="btn" onclick="btn_click()">클릭하기</button>
+  </div>
+  <script>
+     const title = document.getElementById('title')
+
+    function btn_click(){
+      title.innerHTML = '버튼이 클릭되었습니다.'
+
+    }
+  </script>
+</body>
+</html>
