@@ -11,11 +11,12 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <!--navbar-expand-lg: 중간 화면 (lg, 992px 이상)부터 네비게이션 메뉴가 가로로 확장됩니다.-->
-    <h1  class="text-white">
-    Bootstrap Dashbord
-    </h1>
-    <div>
+    <div class="container-fluid">
+        <h1  class="text-white ms-3">
+        Bootstrap Dashbord
+      </h1>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="nav nav-pills">
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">대시보드</a>
@@ -24,42 +25,69 @@
           <a class="nav-link" href="#">사용자목록</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">사용자추가</a>
+          <a class="nav-link active" href="#"  data-bs-toggle="modal" data-bs-target="#tModal">사용자추가</a>
         </li>
       </ul>
     </div>
   </nav>
-  <h2>대시보드</h2>
+  <h2 class="ms-5">대시보드</h2>
 
-  <div class="d-flex">
-    <div class="card" style="width: 18rem;">
+  <div class="row justify-content-end"  >
+    <div class="card mx-2" style="width: 25%">
       <div class="card-body">
         <h5 class="card-title">총 사용자</h5>
         <p class="card-text">0명</p>
       </div>
     </div>
     <br/>
-    <div class="card" style="width: 18rem;">
+    <div class="card mx-2" style="width: 25%;">
       <div class="card-body">
         <h5 class="card-title">활성 사용자</h5>
-        <p class="card-text">0명</p>
+        <p class="card-text center">0명</p>
       </div>
     </div>
-  </br />
-    <div class="card" style="width: 18rem;">
+    </br />
+    <div class="card mx-2" style="width: 25%;">
       <div class="card-body">
         <h5 class="card-title">메시지 전송</h5>
         <p class="card-text">0회</p>
       </div>
     </div>
   </div>
-    <br/>
-     <h2>사용자 목록</h2>
-    <div class="card" style="width: 18rem;">
+  <br/>
+  <h2 class="ms-5">사용자 목록</h2>
+  <div class="row justify-content-end">
+    <div class="card mx-3 " style="width: 75%">
       <div class="card-body">
         <p class="card-text">사용자가 없습니다.</p>
       </div>
     </div>
-  
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="tModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">사용자 추가</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          사용자이름<br />
+          <input type="text" class="form-control w-75">
+          <br />
+           상태<br />
+          <select class="form-select w-75">
+              <option value=""></option>
+              <option value="1">활성</option>
+              <option value="2">비활성</option>
+          </select>
+          <br/>
+          <button type="button" class="btn btn-primary w-100">추가하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
