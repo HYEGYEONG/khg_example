@@ -12,59 +12,66 @@
 </head>
 <body>
 <!-- 반응형 네비게이션 바 -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">🌐 Bootstrap Dashboard</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#dashboard">대시보드</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#users">사용자 목록</a>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">사용자 추가</button>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">🌐 Bootstrap Dashboard</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#dashboard">대시보드</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#users">사용자 목록</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">사용자 추가</button>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <div class="container mt-3">
-    <h1 class="mt-4">대시보드</h1>
-    <div class="row">
-      <div class="card col text-center" style="width: 18rem;">
+<!-- 대시보드 (반응형 카드) -->
+<div class="container mt-4" id="dashboard">
+  <h2 class="mb-4">📊 대시보드</h2>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
         <div class="card-body">
           <h5 class="card-title">총 사용자</h5>
-          <p class="card-text" id="totalUsers">0명</p>
+          <p class="card-text fw-bold" id="totalUsers">0명</p>
         </div>
       </div>
-      <div class="card col text-center" style="width: 18rem;">
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
         <div class="card-body">
           <h5 class="card-title">활성 사용자</h5>
-          <p class="card-text" id="activeUsers">0명</p>
+          <p class="card-text fw-bold" id="activeUsers">0명</p>
         </div>
       </div>
-     <div class="card col text-center" style="width: 18rem;">
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
         <div class="card-body">
           <h5 class="card-title">메시지 전송</h5>
-          <p class="card-text">0회</p>
+          <p class="card-text fw-bold" id="messageCount">0회</p>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- 사용자 목록 (동적 추가) -->
-  <div class="container mt-4" id="users">
-    <h2>👥 사용자 목록</h2>
-    <ul class="list-group" id="userList">
-      <li class="list-group-item text-muted">사용자가 없습니다.</li>
-    </ul>
-  </div>
+<!-- 사용자 목록 (동적 추가) -->
+<div class="container mt-4" id="users">
+  <h2>👥 사용자 목록</h2>
+  <ul class="list-group" id="userList">
+    <li class="list-group-item text-muted">사용자가 없습니다.</li>
+  </ul>
+</div>
 
 
   <!-- Modal -->
@@ -96,6 +103,5 @@
       </div>
     </div>
   </div>
-
 </body>
 </html>
