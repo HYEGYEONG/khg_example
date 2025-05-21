@@ -11,6 +11,18 @@ function Search() {
   MoviesList(rs);
 }
 
+input.addEventListener('keyup', function(event) {
+  if (event.key === 'Enter') {
+    const keyword = input.value.trim().toLowerCase();
+    var rs = movieList.results.filter(function(movie){
+     return movie.title.toLowerCase().includes(keyword)
+    });
+    MoviesList(rs);
+  }
+});
+
+
+
 function MoviesList(movies) {
   container.innerHTML = "";
 

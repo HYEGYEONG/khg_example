@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="style.css" />
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Chart.js CDN (데이터 시각화) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
@@ -18,7 +20,7 @@
       <div class="container">
         <a class="navbar-brand" href="index.html">🎬 영화 정보 사이트</a>
         <div class="ms-auto">
-          <a href="index.html" class="btn btn-outline-light btn-sm">검색</a>
+          <a href="index.html" class="btn btn-outline-light btn-sm">영화검색</a>
         </div>
       </div>
     </nav>
@@ -47,7 +49,10 @@
         </ul>
       </div>
     </div>
-
+    <div div class="text-center" >
+      <h3>보유기술 숙련도</h3>
+      <canvas id="myChart" width="250"></canvas>
+    </div>
   </div>
   </main>
 
