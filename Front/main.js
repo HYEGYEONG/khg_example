@@ -3,7 +3,7 @@ const button = document.getElementById("searchButton");
 const container = document.getElementById("movieContainer");
 
 
-function handleSearch() {
+function Search() {
   const keyword = input.value.trim().toLowerCase();
   var rs = movieList.results.filter(function(movie){
     return movie.title.toLowerCase().includes(keyword)
@@ -26,11 +26,10 @@ function MoviesList(movies) {
     col.innerHTML = `
     <a href="detail.html?id=${movie.id}" class="text-decoration-none">
       <div class="card h-100 shadow-sm">
-        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top" alt="${movie.title}">
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top">
         <div class="card-body">
             <h5 class="card-title">${movie.title}</h5>
             <p class="card-text text-truncate">${movie.overview}</p>
-         
         </div>
       </div>
        </a>

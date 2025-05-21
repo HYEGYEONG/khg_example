@@ -12,7 +12,7 @@ if (movie) {
   container.innerHTML = `
     <div class="row">
       <div class="col-md-5">
-        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="img-fluid rounded shadow" alt="${movie.title}">
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="img-fluid rounded shadow">
       </div>
       <div class="col-md-7">
         <h2>${movie.title}</h2>
