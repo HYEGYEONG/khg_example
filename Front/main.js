@@ -13,11 +13,7 @@ function Search() {
 
 input.addEventListener('keyup', function(event) {
   if (event.key === 'Enter') {
-    const keyword = input.value.trim().toLowerCase();
-    var rs = movieList.results.filter(function(movie){
-     return movie.title.toLowerCase().includes(keyword)
-    });
-    MoviesList(rs);
+    Search()
   }
 });
 
@@ -36,7 +32,7 @@ function MoviesList(movies) {
     col.className = "col-lg-4 col-md-6 col-sm-12 mb-4";
 
     col.innerHTML = `
-    <a href="detail.html?id=${movie.id}" class="text-decoration-none">
+    <a href="detail.html?id=${movie.id}&keyword=${encodeURIComponent(input.value)}" class="text-decoration-none">
       <div class="card h-100 shadow-sm">
         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top">
         <div class="card-body">
@@ -51,5 +47,15 @@ function MoviesList(movies) {
   });
 }
 
+
+window.addEventListener('DOMContentLoaded', function() {
+  const lastKeyword = sessionStorage.getItem('lastKeyword');
+  if (lastKeyword) {
+    input.value = lastKeyword;
+    Search();
+    sessionStorage.removeItem('lastKeyword'); // 한 번만 사용하고 삭제
+    console.log("삭제");
+  }
+});
 
 //MoviesList(movieList.results);

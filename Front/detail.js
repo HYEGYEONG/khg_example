@@ -19,10 +19,17 @@ if (movie) {
         <p><strong>개봉일:</strong> ${movie.release_date}</p>
         <p><strong>평점:</strong> ⭐ ${movie.vote_average} (${movie.vote_count}명)</p>
         <p><strong>줄거리:</strong> ${movie.overview}</p>
-        <a href="index.html" class="btn btn-secondary mt-3">다른영화검색</a>
+        <a href="index.html" class="btn btn-secondary mt-3" id="SearchListBtn">다른영화검색</a>
       </div>
     </div>
   `;
 } else {
   container.innerHTML = `<p class="text-danger text-center">영화 정보를 찾을 수 없습니다.</p>`;
 }
+
+document.getElementById("SearchListBtn").addEventListener("click", function() {
+  const keyword = new URLSearchParams(window.location.search).get('keyword');
+  if (keyword) {
+    sessionStorage.setItem('lastKeyword', keyword);
+  }
+});
