@@ -43,6 +43,11 @@ new Chart(ctx, {
           }
         }
       }
+    },
+    plugins: {
+      legend: {
+      display: false // 범례 숨기기
+      }
     }
   }
 });
